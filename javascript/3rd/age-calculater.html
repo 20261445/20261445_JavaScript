@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이 계산하기</title>
+    <link rel="stylesheet" href="3rdtest.css">
+</head>
+<body>
+    <h1 id="heading">나이 계산하기</h1>
+    <p id="text">태어난 연도를 입력해 보세요.</p>
+
+    <input id="birthYear" type="number" placeholder="예: 2000">
+    <button id="calculateButton">계산하기</button>
+    <h2 id="result"></h2>
+
+    <script>
+        var birthYear = document.querySelector("#birthYear");
+        var calculateButton = document.querySelector("#calculateButton");
+        var result = document.querySelector("#result");
+        var currentYear = new Date().getFullYear();
+        calculateButton.onclick = function() {
+            var age = currentYear - Number(birthYear.value);
+
+            result.textContent ="당신의 나이는 "+ age + "세입니다.";
+        };
+    </script>
+</body>
+</html>
